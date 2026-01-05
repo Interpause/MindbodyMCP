@@ -176,6 +176,7 @@ export async function getClientEnrollmentsTool(
   }>;
   totalEnrollments: number;
 }> {
+  // TODO: Completely hallucinated route, doesn't exist.
   const response = await mindbodyClient.get<any>('/client/clientenrollments', {
     params: {
       ClientId: clientId,

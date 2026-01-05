@@ -230,6 +230,8 @@ export async function getBookableItemsTool(
     },
   });
 
+  // TODO: Complete hallucination of response structure, see actual:
+  // https://developers.mindbodyonline.com/ui/documentation/public-api#/http/models/structures/get-bookable-items-response
   const bookableItems = response.BookableItems.map((item: any) => ({
     scheduledItemId: item.ScheduledItemId,
     staffId: item.StaffId || item.Staff?.Id,

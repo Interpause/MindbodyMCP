@@ -33,6 +33,7 @@ async function findTeacherByName(name: string): Promise<Staff | null> {
   const response = await mindbodyClient.get<GetStaffResponse>('/staff/staff', {
     params: request,
   });
+  console.log(response);
 
   // Find matching teacher (case-insensitive)
   const teacher = response.StaffMembers.find(
