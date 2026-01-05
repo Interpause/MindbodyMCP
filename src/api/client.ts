@@ -3,7 +3,7 @@ import { mindbodyAuth } from './auth';
 
 class MindbodyApiClient {
   private client: AxiosInstance;
-  private readonly maxRetries = 3;
+  private readonly maxRetries = 1;
   private readonly retryDelay = 1000;
 
   constructor() {
