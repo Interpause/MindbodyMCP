@@ -63,11 +63,17 @@ class MindbodyAuth {
   }
 
   async getAuthHeaders(): Promise<Record<string, string>> {
-    const token = await this.getUserToken();
-    return {
-      ...this.getHeaders(false),
-      'Authorization': `Bearer ${token}`,
-    };
+    try {
+      const token = await this.getUserToken();
+      return {
+        ...this.getHeaders(false),
+        'Authorization': `Bearer ${token}`,
+      };
+    } catch (err) {
+      // console.error(err);
+      console.warn("Fallback to token-less request");
+      return this.getHeaders(false);
+    }
   }
 }
 
